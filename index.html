@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login In</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <input type="text" placeholder="Enter Your Username Here" id="usernameInput">
+        <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+        <br>
+        <br>
+        <input type="text" placeholder="Enter Password Here" class="passwordInput">
+        <i class="fa-solid fa-lock" style="color: #ffffff;"></i>
+        <div class="extras">
+            <input class="check" type="checkbox">
+            <p class="remP">Remember Me?</p>
+            <p class="forgotP">Forgot Password?</p>
+        </div>
+        <br>
+        <button class="btn" onclick="login()">Login</button>
+        <div class="inline">
+            <p class="dont">Don't Have An Account</p>
+            <a href="#" class="register">Register</a>
+        </div>
+
+        <script src="https://kit.fontawesome.com/2efb538a76.js" crossorigin="anonymous"></script>
+        <script src="login.js"></script>
+    </div>
+</body>
+
+</html>
