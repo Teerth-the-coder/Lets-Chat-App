@@ -13,13 +13,15 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 //ADD YOUR FIREBASE LINKS HERE
 
+
+
 function getData() {
     firebase.database().ref("/").on('value', function (snapshot) {
           document.getElementById("output").innerHTML = ""; snapshot.forEach(function (childSnapshot) {
                 childKey = childSnapshot.key;
                 Room_names = childKey;
                 //Start code
-                row = "<div class = `room_name` onclick = `redirectToRoom(this.id)` id = " + Room_names + ">" + Room_names + "</div> <hr>";
+                row = "<div class = `room_name` onclick = redirectToRoom(this.id) id = " + Room_names + ">" + Room_names + "</div> <hr>";
                 document.getElementById("output").innerHTML += row;
                 //End code
           });
@@ -33,15 +35,24 @@ function addroom() {
           purpose: "adding new room again"
     })
     localStorage.setItem("roomName", roomName);
-    window.location = "kwitter_page.html";
+    window.location = "letsChat_page.html";
 
 }
 
 function redirectToRoom(id) {
     localStorage.setItem("roomName", id);
-    window.location = "kwitter_page.html";
+    window.location = "letsChat_page.html";
 }
 
 function logout() {
-
+    localStorage.removeItem("username");
+    window.location = "index.html";
 }
+
+function showName() {
+    var name = localStorage.getItem("username");
+
+    document.querySelector(".title").innerHTML = "Hello  " + name;
+}
+
+showName();
